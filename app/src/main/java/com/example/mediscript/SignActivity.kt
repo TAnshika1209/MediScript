@@ -22,11 +22,11 @@ class SignActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        signMail=findViewById(R.id.)
-        signPass=findViewById(R.id.)
-        toLogin=findViewById(R.id.)
-        signPassConfirm=findViewById(R.id.)
-        sign=findViewById(R.id.)
+        //signMail=findViewById(R.id.)
+        //signPass=findViewById(R.id.)
+        //toLogin=findViewById(R.id.)
+        //signPassConfirm=findViewById(R.id.)
+        //sign=findViewById(R.id.)
         auth=FirebaseAuth.getInstance()
 
         sign.setOnClickListener{

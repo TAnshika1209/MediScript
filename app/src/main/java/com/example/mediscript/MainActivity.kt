@@ -23,9 +23,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        camera=findViewById(R.id.)
-        gallery=findViewById(R.id.)
-        remind=findViewById(R.id.)
+       // camera=findViewById(R.id.)
+        //gallery=findViewById(R.id.)
+        //remind=findViewById(R.id.)
         var currentUser=auth.currentUser
         if(currentUser == null){
             var intent= Intent(this,LoginActivity :: class.java)
