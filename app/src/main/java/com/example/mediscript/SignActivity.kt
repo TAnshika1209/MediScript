@@ -17,16 +17,18 @@ class SignActivity : AppCompatActivity() {
     lateinit var signPassConfirm : EditText
     lateinit var toLogin: TextView
     lateinit var sign : Button
+    lateinit var name : EditText
 
     lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //signMail=findViewById(R.id.)
-        //signPass=findViewById(R.id.)
-        //toLogin=findViewById(R.id.)
-        //signPassConfirm=findViewById(R.id.)
-        //sign=findViewById(R.id.)
+        signMail=findViewById(R.id.signMail)
+        signPass=findViewById(R.id.signPass)
+        toLogin=findViewById(R.id.backToLogin)
+        signPassConfirm=findViewById(R.id.signConPass)
+        sign=findViewById(R.id.sign)
+        name=findViewById(R.id.signName)
         auth=FirebaseAuth.getInstance()
 
         sign.setOnClickListener{
