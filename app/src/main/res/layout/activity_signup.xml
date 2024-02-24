@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/app_bgrd"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/signName"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/karma_light"
+        android:hint="Full Name"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        android:background="@drawable/bkg"/>
+
+    <EditText
+        android:id="@+id/signMail"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/karma_light"
+        android:hint="Email Id"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        android:background="@drawable/bkg"/>
+
+    <EditText
+        android:id="@+id/signPass"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/karma_light"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        android:background="@drawable/bkg"/>
+
+    <EditText
+        android:id="@+id/signConPass"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/karma_light"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        android:background="@drawable/bkg"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/jotione_regular"
+        android:textSize="20dp"
+        android:text="SIGN UP"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"/>
+
+    <TextView
+        android:id="@+id/backToLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kadwa_bold"
+        android:text="Already have an account? Login"
+        android:textColor="@color/darkBlue"
+        android:layout_margin="10dp"/>
+
+</LinearLayout>

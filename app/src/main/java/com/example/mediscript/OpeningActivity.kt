@@ -16,4 +16,5 @@ class OpeningActivity : AppCompatActivity() {
             finish()
         },1500)
     }
+
 }
