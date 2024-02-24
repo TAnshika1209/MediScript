@@ -23,12 +23,12 @@ class SignActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        signMail=findViewById(R.id.signMail)
-        signPass=findViewById(R.id.signPass)
-        toLogin=findViewById(R.id.backToLogin)
-        signPassConfirm=findViewById(R.id.signConPass)
-        sign=findViewById(R.id.sign)
-        name=findViewById(R.id.signName)
+        signMail=findViewById(R.id.signmail)
+        signPass=findViewById(R.id.signpass)
+        toLogin=findViewById(R.id.signlogin)
+        signPassConfirm=findViewById(R.id.signconpass)
+        sign=findViewById(R.id.signbutton)
+        name=findViewById(R.id.signname)
         auth=FirebaseAuth.getInstance()
 
         sign.setOnClickListener{

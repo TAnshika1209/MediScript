@@ -23,8 +23,8 @@ class LoginActivity : AppCompatActivity() {
         auth= FirebaseAuth.getInstance()
         logMail=findViewById(R.id.logmail)
         logPass=findViewById(R.id.logpass)
-        login=findViewById(R.id.login)
-        toSign=findViewById(R.id.backToSignup)
+        login=findViewById(R.id.logbutton)
+        toSign=findViewById(R.id.logsignup)
         var currentUser=auth.currentUser
         if(currentUser != null){
             var intent = Intent(this,MainActivity::class.java)

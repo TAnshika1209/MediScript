@@ -68,17 +68,17 @@ class MainActivity : AppCompatActivity() {
         val image = InputImage.fromBitmap(bitmap, 0)
         val Result = recognizer.process(image)
 
-            .addOnSuccessListener { visionText ->
-                Result.setText(visionText.text.toString())
+            /*.addOnSuccessListener { visionText ->
+               Result.setText(visionText.text.toString())
                 val resultText=Result.text
-                for( block in ){
+                //for( block in ){
 
                 }
             }
             .addOnFailureListener { e ->
                 // Task failed with an exception
                 Toast.makeText(this, "Error Occured", Toast.LENGTH_SHORT).show()
-            }
+            }*/
 
     }
 }
