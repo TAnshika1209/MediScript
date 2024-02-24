@@ -8,8 +8,10 @@ import android.provider.MediaStore
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
+import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.mlkit.vision.common.InputImage
+import com.google.mlkit.vision.text.Text
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
 
@@ -43,6 +45,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         gallery.setOnClickListener{
+            val image : InputImage
 
         }
 
@@ -63,10 +66,14 @@ class MainActivity : AppCompatActivity() {
     private fun detectTextfromCamera(bitmap: Bitmap) {
         var recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
         val image = InputImage.fromBitmap(bitmap, 0)
-        recognizer.process(image)
+        val Result = recognizer.process(image)
+
             .addOnSuccessListener { visionText ->
-                // Handle success
-                val extractedText=visionText.text.toString()
+                Result.setText(visionText.text.toString())
+                val resultText=Result.text
+                for( block in ){
+
+                }
             }
             .addOnFailureListener { e ->
                 // Task failed with an exception
