@@ -1,6 +1,7 @@
 package com.example.mediscript
 
 import android.widget.Toast
+import com.google.firebase.database.FirebaseDatabase
 
 class FirebaseDBManager {
 

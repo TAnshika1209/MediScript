@@ -49,6 +49,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
     implementation("com.google.firebase:firebase-auth-ktx:22.3.1")
     implementation ("com.google.mlkit:text-recognition:16.0.0")
+    implementation("com.google.firebase:firebase-ml-common:22.1.2")
+    implementation("com.google.firebase:firebase-database-ktx:20.3.0")
     //implementation("com.google.android.gms:play-services-mlkit-text-recognition:19.0.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

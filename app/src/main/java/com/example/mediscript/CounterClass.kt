@@ -1,7 +1,7 @@
 package com.example.mediscript
 
 data class CounterClass (
-    val id: String,
+    var id: String,
     val title: String,
     val description: String
 )

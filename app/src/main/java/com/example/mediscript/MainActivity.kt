@@ -10,14 +10,15 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ml.common.FirebaseMLException
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.Text
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
+import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var someActivityResultLauncher : ActivityResultLauncher<Intent>
     lateinit var camera : Button
     lateinit var gallery: Button
     lateinit var remind : Button
@@ -62,23 +63,36 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
     private fun detectTextfromCamera(bitmap: Bitmap) {
-        var recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
+        val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
         val image = InputImage.fromBitmap(bitmap, 0)
-        val Result = recognizer.process(image)
 
+        recognizer.process(image)
             .addOnSuccessListener { visionText ->
-               Result.setText(visionText.text.toString())
-                val resultText=Result.text
-                for( block in ){
-
+                if (visionText != null) {
+                    val resultText = visionText.text
+                    setText(resultText)
+                } else {
+                    Toast.makeText(this, "No text found", Toast.LENGTH_SHORT).show()
                 }
             }
             .addOnFailureListener { e ->
-                // Task failed with an exception
-                Toast.makeText(this, "Error Occured", Toast.LENGTH_SHORT).show()
+                when (e) {
+                    is IOException -> {
+                        Toast.makeText(this, "Network error occurred", Toast.LENGTH_SHORT).show()
+                    }
+                    is FirebaseMLException -> {
+                        Toast.makeText(this, "ML Kit error occurred", Toast.LENGTH_SHORT).show()
+                    }
+                    else -> {
+                        Toast.makeText(this, "Error occurred: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
+    }
+
+    private fun setText(text: String) {
 
     }
+
 }
